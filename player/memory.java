@@ -1,0 +1,1 @@
+// storing the personal and the adversaries
