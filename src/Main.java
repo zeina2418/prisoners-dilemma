@@ -1,14 +1,20 @@
 package src;
 
-import src.strategies.Joss;
-import src.strategies.TitForTat;
-import src.strategies.AlwaysDefect;
+import src.strategies.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Player p1 = new Player(new TitForTat());
+        List<Strategy> strategies = List.of(new Joss(), new Tester(), new TitForTat(), new AlwaysDefect(), new Random());
+        AxelrodTournament tournament = new AxelrodTournament();
+        tournament.generateAxelrodTournament(strategies, 200);
+
+        // player vs player
+        /*Player p1 = new Player(new TitForTat());
         Player p2 = new Player(new Joss());
 
         Game game = new Game(p1, p2, 200);
@@ -21,10 +27,12 @@ public class Main {
             System.out.println(p2.getStrategy().getStrategyType() + " wins!");
         } else {
             System.out.println("It's a tie!");
-        }
-        Joss joss = (Joss) p2.getStrategy();
-        joss.numberOfCandD(p2.getDecisions());
+        }*/
 
+
+        // count the number of JOSS DEFECT to ensure we have a 1 DEFECT out of 10 COOPERATE
+        /*Joss joss = (Joss) p2.getStrategy();
+        joss.numberOfCandD(p2.getDecisions());*/
 
     }
 }
