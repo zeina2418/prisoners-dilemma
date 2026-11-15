@@ -5,5 +5,6 @@ public enum StrategyType {
     JOSS,
     RANDOM,
     ALL_D,
+    ALL_C,
     TESTER
 }
