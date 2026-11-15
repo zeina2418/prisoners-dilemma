@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Joss implements Strategy {
+    private int jossDefections = 0;
     @Override
     public StrategyType getStrategyType() {
         return StrategyType.JOSS;
@@ -16,7 +17,8 @@ public class Joss implements Strategy {
     public Decision decide(List<Decision> playerHistory, List<Decision> opponentHistory) {
         int numberOfCooperation = Collections.frequency(playerHistory, Decision.COOPERATE);
         int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
-        if(numberOfCooperation % 10 == 0 && numberOfCooperation > 0 && numberOfCooperation / 10 > numberOfDefect ) {
+        if(numberOfCooperation % 10 == 0 && numberOfCooperation > 0 && numberOfCooperation / 10 > jossDefections ) {
+            jossDefections++;
             return Decision.DEFECT;
         }
         Strategy strategy = new TitForTat();
@@ -25,9 +27,9 @@ public class Joss implements Strategy {
 
     public void numberOfCandD(List<Decision> playerHistory){
         int numberOfCooperation = Collections.frequency(playerHistory, Decision.COOPERATE);
-        int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
+        // int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
         System.out.println("Cooperations: " + numberOfCooperation);
-        System.out.println("Defections: " + numberOfDefect);
+        System.out.println("JOSS Defections: " + jossDefections);
     }
 
 }
