@@ -3,11 +3,19 @@ package src.strategies;
 import src.Decision;
 import src.Strategy;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Joss implements Strategy {
     @Override
     public Decision decide(List<Decision> playerHistory, List<Decision> opponentHistory) {
-        return null;
+        int numberOfCooperation = Collections.frequency(playerHistory, Decision.COOPERATE);
+        int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
+        if(numberOfCooperation % 10 == 0 && numberOfCooperation > 0 && numberOfCooperation / 10 < numberOfDefect ) {
+            return Decision.DEFECT;
+        }
+        Strategy strategy = new TitForTat();
+        return strategy.decide(playerHistory, opponentHistory);
     }
+
 }
