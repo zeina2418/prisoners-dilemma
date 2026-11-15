@@ -16,11 +16,18 @@ public class Joss implements Strategy {
     public Decision decide(List<Decision> playerHistory, List<Decision> opponentHistory) {
         int numberOfCooperation = Collections.frequency(playerHistory, Decision.COOPERATE);
         int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
-        if(numberOfCooperation % 10 == 0 && numberOfCooperation > 0 && numberOfCooperation / 10 < numberOfDefect ) {
+        if(numberOfCooperation % 10 == 0 && numberOfCooperation > 0 && numberOfCooperation / 10 > numberOfDefect ) {
             return Decision.DEFECT;
         }
         Strategy strategy = new TitForTat();
         return strategy.decide(playerHistory, opponentHistory);
+    }
+
+    public void numberOfCandD(List<Decision> playerHistory){
+        int numberOfCooperation = Collections.frequency(playerHistory, Decision.COOPERATE);
+        int numberOfDefect = Collections.frequency(playerHistory, Decision.DEFECT);
+        System.out.println("Cooperations: " + numberOfCooperation);
+        System.out.println("Defections: " + numberOfDefect);
     }
 
 }

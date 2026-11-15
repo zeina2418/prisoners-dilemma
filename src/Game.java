@@ -33,13 +33,13 @@ public class Game {
 
             score.calculateScore(player1, player2);
             System.out.println("Round " + (i + 1));
-            System.out.println("Player 1: " + d1);
-            System.out.println("Player 2: " + d2);
+            System.out.println(player1.getStrategy().getStrategyType() + " : " + d1);
+            System.out.println(player2.getStrategy().getStrategyType() + " : " + d2);
             System.out.println("Score: " + player1.getScore() + " - " + player2.getScore());
             System.out.println("--------------------");
         }
         System.out.println("FINAL RESULTS");
-        System.out.println("Player 1: " + player1.getScore());
-        System.out.println("Player 2: " + player2.getScore());
+        System.out.println(player1.getStrategy().getStrategyType() + " : " + player1.getScore());
+        System.out.println(player2.getStrategy().getStrategyType() + " : " + player2.getScore());
     }
 }
