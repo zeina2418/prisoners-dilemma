@@ -2,14 +2,14 @@ package src;
 
 import src.strategies.*;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        List<Strategy> strategies = List.of(new Joss(), new Tester(), new TitForTat(), new AlwaysDefect(), new Random());
+        List<Strategy> strategies = List.of(new Joss(), new Tester(), new TitForTat(), new AlwaysDefect(), new Random(), new Majority(), new AlwaysCooperate());
         AxelrodTournament tournament = new AxelrodTournament();
         tournament.generateAxelrodTournament(strategies, 200);
 
