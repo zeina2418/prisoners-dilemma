@@ -125,6 +125,9 @@ Il est également possible de préciser le nombre maximal de tours :
 
 ```bash
 java -cp out src.Main extended 100
+
+# et
+java -cp out src.Main baseline 100
 ```
 
 **Attention :** ces commandes doivent correspondre aux arguments effectivement pris en charge par la version finale de `Main.java`.
