@@ -15,9 +15,9 @@ public class Main {
         game.play();
 
         if (p1.getScore() > p2.getScore()) {
-            System.out.println("Player 1 wins!");
+            System.out.println(p1.getStrategy().getStrategyType() + " wins!");
         } else if (p2.getScore() > p1.getScore()) {
-            System.out.println("Player 2 wins!");
+            System.out.println(p1.getStrategy().getStrategyType() + " wins!");
         } else {
             System.out.println("It's a tie!");
         }

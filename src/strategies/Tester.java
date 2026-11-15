@@ -2,10 +2,15 @@ package src.strategies;
 
 import src.Decision;
 import src.Strategy;
+import src.StrategyType;
 
 import java.util.List;
 
 public class Tester implements Strategy {
+    @Override
+    public StrategyType getStrategyType() {
+        return StrategyType.TESTER;
+    }
     @Override
     public Decision decide(List<Decision> playerHistory, List<Decision> opponentHistory) {
         if (playerHistory.isEmpty()) { // the first round
