@@ -1,1 +1,0 @@
-// a prisonner has his scory, his current strategy, a memory

@@ -1,0 +1,13 @@
+package src.strategies;
+
+import src.Decision;
+import src.Strategy;
+
+import java.util.List;
+
+public class AlwaysDefect implements Strategy {
+    @Override
+    public Decision decide(List<Decision> playerHistory, List<Decision> opponentHistory) {
+        return Decision.DEFECT;
+    }
+}
