@@ -21,7 +21,7 @@ public class AxelrodTournament {
                 Player player1 = new Player(strategies.get(i));
                 Player player2 = new Player(strategies.get(j));
                 // strategies.get(i) vs strategies.get(j)
-                Game tournament = new Game(player1, player2, numberOfRounds);
+                Game tournament = new Game(player1, player2, numberOfRounds, 0.0f);
                 tournament.play();
                 Map<StrategyType, Integer> gameScores = tournament.getScore();
                 for (StrategyType strategy : gameScores.keySet()) {
