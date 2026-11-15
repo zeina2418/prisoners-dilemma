@@ -5,6 +5,7 @@ public enum StrategyType {
     JOSS,
     RANDOM,
     ALL_D,
-    ALL_C,
+    ALL_C,   // Always Cooperate
+    MAJORITY, // Cooperate if the opponent has cooperated more often than they've defected; otherwise, defect
     TESTER
 }
