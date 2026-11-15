@@ -1,9 +1,10 @@
 # Tournoi du dilemme du prisonnier itéré — HAI716I
 
 **HAI716I Projet 2 (partie 1)**  
-**Auteur :** Zeina ABDEL SATTAR 
+
+**Auteur :** Zeina ABDEL SATTAR
+
 **Langage :** Java
-**Version :** openjdk version "21.0.12.1" 2026-08-
 
 ## Prérequis techniques
 
