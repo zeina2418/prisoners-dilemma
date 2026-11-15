@@ -131,11 +131,11 @@ java -cp out src.Main extended 100
 
 ## 9. Reproductibilité
 
-[À COMPLÉTER]
+Une graine aléatoire fixe (`42`) est utilisée pour la stratégie RANDOM afin de rendre ses choix reproductibles d'une exécution à l'autre.
 
-Indiquer ici la graine aléatoire utilisée et la manière dont elle est transmise aux différents générateurs aléatoires du programme.
+En revanche, les générateurs aléatoires utilisés pour l'application du bruit et la détermination de la continuation des parties ne sont pas initialisés avec une graine fixe. Leurs résultats peuvent donc varier d'une exécution à l'autre, même lorsque les paramètres du tournoi restent identiques.
 
-Les expériences doivent pouvoir être relancées avec les mêmes paramètres et la même graine afin de reproduire les résultats.
+Par conséquent, la reproductibilité est partielle : les décisions de la stratégie RANDOM sont déterministes pour une même séquence d'appels, mais les résultats globaux des tournois comportant du bruit ou un horizon temporel inconnu ne sont pas garantis identiques.
 
 ## 10. Journal de bord
 
