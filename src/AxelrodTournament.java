@@ -7,6 +7,14 @@ import java.util.Map;
 
 public class AxelrodTournament {
 
+    private float noise;
+    private float continuationProbability;
+
+    AxelrodTournament(float noise, float continuationProbability) {
+        this.noise = noise;
+        this.continuationProbability = continuationProbability;
+    }
+
     void generateAxelrodTournament(List<Strategy> strategies, int numberOfRounds) {
         Map<StrategyType, Integer> tournamentScores = new HashMap<>();
 
@@ -21,7 +29,7 @@ public class AxelrodTournament {
                 Player player1 = new Player(strategies.get(i));
                 Player player2 = new Player(strategies.get(j));
                 // strategies.get(i) vs strategies.get(j)
-                Game tournament = new Game(player1, player2, numberOfRounds, 0.0f);
+                Game tournament = new Game(player1, player2, numberOfRounds, noise, continuationProbability);
                 tournament.play();
                 Map<StrategyType, Integer> gameScores = tournament.getScore();
                 for (StrategyType strategy : gameScores.keySet()) {
